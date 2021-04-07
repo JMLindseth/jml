@@ -17,10 +17,10 @@ const texts = {
 
 const NavigationBar = () => {
   return (<NavigationBarGrid>
-    <LinkRightPadded href="/" className="knapp knapp--mini">
+    <LinkRightPadded href="/">
       {texts.home}
     </LinkRightPadded>
-    <LinkRightPadded href="/snake" className="knapp knapp--mini">
+    <LinkRightPadded href="/snake">
       {texts.snake}
     </LinkRightPadded>
   </NavigationBarGrid>)
