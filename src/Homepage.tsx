@@ -1,17 +1,15 @@
+import Page from "./Page";
+
 const texts = {
-    title: "Velkommen!",
+  title: "Velkommen!",
 }
 
 const Homepage = () => {
-    return (<>
-        <h1>
-            {texts.title}
-        </h1>
-
-        <a href={'/snake'}>
-            Snake!
-        </a>
-    </>)
+  return (<Page>
+    <h1>
+      {texts.title}
+    </h1>
+  </Page>)
 }
 
 export default Homepage;
