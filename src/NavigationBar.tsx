@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from "./components/generics/Link";
 
 const NavigationBarGrid = styled.div`
   display: flex;
@@ -6,8 +7,8 @@ const NavigationBarGrid = styled.div`
   justify-content: center;
 `
 
-const LinkRightPadded = styled.a`
-  padding-right: 1em;
+const LinkRightPadded = styled(Link)`
+  margin-right: 1em;
 `
 
 const texts = {
@@ -21,7 +22,7 @@ interface LinkProps {
   href: string;
 }
 
-const Link = ({text, href}: LinkProps) => {
+const LinkWrapped = ({text, href}: LinkProps) => {
   return(<LinkRightPadded href={href}>
     {text}
   </LinkRightPadded>)
@@ -29,9 +30,9 @@ const Link = ({text, href}: LinkProps) => {
 
 const NavigationBar = () => {
   return (<NavigationBarGrid>
-    <Link text={texts.home} href={'/'} />
-    <Link text={texts.snake} href={'/snake'} />
-    <Link text={texts.codebox} href={'/codebox'} />
+    <LinkWrapped text={texts.home} href={'/'} />
+    <LinkWrapped text={texts.snake} href={'/snake'} />
+    <LinkWrapped text={texts.codebox} href={'/codebox'} />
   </NavigationBarGrid>)
 }
 
