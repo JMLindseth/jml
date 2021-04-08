@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Homepage from '../Homepage';
-import SnakePage from "../Snake/SnakePage";
+import Homepage from '../components/Homepage';
+import SnakePage from "../components/Snake/SnakePage";
 
 const AppRouter = () => {
   return (

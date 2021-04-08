@@ -1,5 +1,5 @@
 import SnakeGame from "./SnakeGame";
-import Page from "../Page";
+import Page from "../../Page";
 
 const SnakePage = () => {
     return (<Page title={"Snake"}>
