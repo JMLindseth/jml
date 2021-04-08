@@ -7,7 +7,7 @@ const HiddenApple = styled.img`
   display: none;
 `
 
-const DropdownWrapper = styled.div`
+const SmallDropdown = styled(Dropdown)`
   width: 10em;
   margin-left: auto;
 `
@@ -17,7 +17,7 @@ const SnakeGame = () => {
 
   const changeSize = (element: Option) => {
     setSize((parseInt(element.value)));
-    tileCount = parseInt(element.value)/20;
+    tileCount = parseInt(element.value) / 20;
   }
 
   useEffect(() => {
@@ -34,19 +34,16 @@ const SnakeGame = () => {
   ];
 
   return (<>
-    <DropdownWrapper>
-      <span>{'Velg størrelse'}</span>
-      <Dropdown options={options} onChange={(e) => changeSize(e)} placeholder="Velg størrelse"/>
-    </DropdownWrapper>
-    <canvas id={'gc'} width={size} height={size} />
-    <HiddenApple id="appleId" src={apple} />
+    <SmallDropdown options={options} onChange={(e) => changeSize(e)} placeholder="Velg størrelse"/>
+    <canvas id={'gc'} width={size} height={size}/>
+    <HiddenApple id="appleId" src={apple}/>
   </>)
 }
 
 let playerX: number = 10
 let playerY: number = 10
 let tileSize: number = 20;
-let tileCount: number = 400/20;
+let tileCount: number = 400 / 20;
 let appleX: number = 15
 let appleY: number = 15
 let xVelocity: number = 0
@@ -56,16 +53,10 @@ let paused: boolean = false
 let trail: any[] = [];
 let tail: number = 5;
 
-const pausedText = "PAUSED!"
-
 const game = (context: any) => {
   if (paused) {
     paintCanvasBlack(context);
-
-    context.font = "30px Arial";
-    context.fillStyle = "red";
-    context.textAlign = "center";
-    context.fillText(pausedText, context.canvas.width / 2, context.canvas.height / 2);
+    displayPauseText(context);
   } else {
     regenerateAppleIfOutsidePLayableArea(context);
     playerX += xVelocity
@@ -79,6 +70,20 @@ const game = (context: any) => {
 
     eatAndGenerateApple(context);
   }
+}
+
+const paintCanvasBlack = (context: any) => {
+  context.fillStyle = "black";
+  context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+}
+
+const displayPauseText = (context: any) => {
+  const pausedText = "PAUSED!"
+
+  context.font = "30px Arial";
+  context.fillStyle = "red";
+  context.textAlign = "center";
+  context.fillText(pausedText, context.canvas.width / 2, context.canvas.height / 2);
 }
 
 const checkEdges = () => {
@@ -97,11 +102,6 @@ const checkEdges = () => {
   if (playerY > tileCount - 1) {
     playerY = 0
   }
-}
-
-const paintCanvasBlack = (context: any) => {
-  context.fillStyle = "black";
-  context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 }
 
 const regenerateAppleIfOutsidePLayableArea = (context: any) => {
