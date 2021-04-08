@@ -24,6 +24,12 @@ const NavAndTheme = styled.div`
   flex-direction: row;
 `
 
+const MainContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const fullTitle = (title?: string) => {
   return title
     ? `${title} - JM Lindseth`
@@ -51,9 +57,12 @@ const Page = (pageProps: PageProps) => {
               <NavigationBar/>
               <Toggle theme={theme as string} toggleTheme={themeToggler as (() => void)} />
             </NavAndTheme>
-            <div>
+            <MainContent>
+              <h1>
+                {title}
+              </h1>
               {children}
-            </div>
+            </MainContent>
           </PageWrapper>
         </DocumentTitle>
       </>

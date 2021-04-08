@@ -7,7 +7,6 @@ const texts = {
 
 const CodeboxPage = () => {
     return (<Page title={texts.title}>
-        <h1>{texts.title}</h1>
         <Codebox />
         </Page>)
 }

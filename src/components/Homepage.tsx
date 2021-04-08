@@ -5,11 +5,7 @@ const texts = {
 }
 
 const Homepage = () => {
-  return (<Page>
-    <h1>
-      {texts.title}
-    </h1>
-  </Page>)
+  return (<Page title={texts.title} />)
 }
 
 export default Homepage;
