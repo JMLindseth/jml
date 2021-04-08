@@ -1,7 +1,22 @@
+import { UnControlled as CodeMirror } from "react-codemirror2";
+import styled from "styled-components";
+import 'codemirror/mode/clike/clike';
+
+const CodeboxWrapper = styled.div`
+  width: 150%;
+`
+
 const Codebox = () => {
-  return(<div>
-    <p>heihei</p>
-  </div>)
+  return(<CodeboxWrapper>
+    <CodeMirror
+      value='const foo = "bar"'
+      options={{
+        mode: 'text/x-kotlin',
+        theme: 'material',
+        lineNumbers: true
+      }}
+      />
+  </CodeboxWrapper>)
 }
 
 
