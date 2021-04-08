@@ -13,16 +13,25 @@ const LinkRightPadded = styled.a`
 const texts = {
   home: "Home!",
   snake: "Snake",
+  codebox: "codebox",
+}
+
+interface LinkProps {
+  text: string;
+  href: string;
+}
+
+const Link = ({text, href}: LinkProps) => {
+  return(<LinkRightPadded href={href}>
+    {text}
+  </LinkRightPadded>)
 }
 
 const NavigationBar = () => {
   return (<NavigationBarGrid>
-    <LinkRightPadded href="/">
-      {texts.home}
-    </LinkRightPadded>
-    <LinkRightPadded href="/snake">
-      {texts.snake}
-    </LinkRightPadded>
+    <Link text={texts.home} href={'/'} />
+    <Link text={texts.snake} href={'/snake'} />
+    <Link text={texts.codebox} href={'/codebox'} />
   </NavigationBarGrid>)
 }
 
