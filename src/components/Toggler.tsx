@@ -5,19 +5,14 @@ import sunSvg from "../img/svg/sun.svg";
 import moonSvg from "../img/svg/moon.svg";
 
 const Button = styled.button`
-  border: 2px solid ${({ theme }) => theme.toggleBorder};
+  background: ${({ theme }) => theme.toggleButtonBackground};
+  border: 2px solid gray;
   border-radius: 30px;
   cursor: pointer;
-  font-size: 0.5rem;
-  justify-content: space-between;
-  margin: 0 auto;
-  overflow: hidden;
+  font-size:0.5em;
   padding: 0.5em;
-  position: relative;
-  width: 10em;
+  width: 7em;
   height: 5em;
-  outline: none;
-}
 `;
 
 const Sun = styled.img`

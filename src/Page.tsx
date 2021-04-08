@@ -34,7 +34,9 @@ const Page = (pageProps: PageProps) => {
   const {title, children} = pageProps;
 
   const [theme, themeToggler, mountedComponent] = useDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+  const themeMode = theme === 'light'
+    ? lightTheme
+    : darkTheme;
 
   if(!mountedComponent) return <div/>
   return (

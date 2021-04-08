@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 export const useDarkMode = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const [mountedComponent, setMountedComponent] = useState(false)
 
-  const setMode = (mode: any) => {
+  const setMode = (mode: string) => {
     window.localStorage.setItem('theme', mode)
     setTheme(mode)
   };
 
   const themeToggler = () => {
-    theme === 'light' ? setMode('dark') : setMode('light')
+    theme === 'light'
+      ? setMode('dark')
+      : setMode('light')
   };
 
   useEffect(() => {
