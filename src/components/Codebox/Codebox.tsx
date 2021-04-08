@@ -3,7 +3,7 @@ import styled from "styled-components";
 import 'codemirror/mode/clike/clike';
 
 const CodeboxWrapper = styled.div`
-  width: 150%;
+  width: 50em;
 `
 
 const Codebox = () => {

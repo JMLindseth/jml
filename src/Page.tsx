@@ -3,7 +3,6 @@ import DocumentTitle from "react-document-title";
 import NavigationBar from "./NavigationBar";
 import {ThemeProvider} from "styled-components";
 import {lightTheme, darkTheme} from "./components/Themes"
-import {useState} from "react";
 import {useDarkMode} from "./components/UseDarkmode";
 import Toggle from "./components/Toggler";
 import {GlobalStyles} from "./components/Globalstyle";
@@ -14,8 +13,10 @@ interface PageProps {
 }
 
 const PageWrapper = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 `
 
 const NavAndTheme = styled.div`
