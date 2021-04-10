@@ -1,9 +1,10 @@
 import Page from "../Page";
 import styled from "styled-components";
 import {Wave} from "react-animated-text";
+import {useRef} from "react";
+import DoubleArrowDown from "../img/doubleArrowDown";
 
 const texts = {
-  title: "Velkommen!",
   buzzwords: [
     'Synergy',
     'Sustainability',
@@ -14,17 +15,37 @@ const texts = {
 }
 
 const Buzzword = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 2em;
   font-size: 10em;
 `
 
+const ArrowButton = styled.button`
+  margin-top: 10em;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+`;
+
+const ColoredArrow = styled(DoubleArrowDown)`
+  fill: ${({ theme }) => theme.text};
+  
+  &:hover {
+    padding-top: .5em;
+  }
+`
+
 const Homepage = () => {
-  return (<Page title={texts.title}>
+  const ref = useRef<HTMLDivElement>(null);
+
+  const onClickArrow = () => {
+    const top = ref.current?.getBoundingClientRect().height;
+    return window.scrollTo({ top: top, behavior: "smooth" });
+  };
+
+  return (<Page>
     <Buzzword>
       <Wave
         text={randomWord()}
@@ -35,6 +56,9 @@ const Homepage = () => {
         effectDuration={0.7}
       />
     </Buzzword>
+    <ArrowButton tabIndex={-1} onClick={onClickArrow} aria-hidden>
+      <ColoredArrow />
+    </ArrowButton>
   </Page>)
 }
 
