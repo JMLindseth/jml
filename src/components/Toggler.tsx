@@ -5,7 +5,7 @@ import sunSvg from "../img/svg/sun.svg";
 import moonSvg from "../img/svg/moon.svg";
 
 const Button = styled.button`
-  background: ${props => props.theme.toggleButtonBackground};
+  background: ${(props) => props.theme.toggleButtonBackground};
   border: 2px solid gray;
   border-radius: 30px;
   cursor: pointer;

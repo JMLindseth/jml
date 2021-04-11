@@ -1,6 +1,6 @@
-import 'styled-components';
+import "styled-components";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     body: string;
     text: string;
@@ -9,6 +9,6 @@ declare module 'styled-components' {
       background: string;
       text: string;
       focusShadow: string;
-    }
+    };
   }
 }

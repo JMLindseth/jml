@@ -59,8 +59,8 @@ let yVelocity = 0;
 let paused = false;
 
 interface TrailType {
-  x: number,
-  y: number,
+  x: number;
+  y: number;
 }
 
 const trail: TrailType[] = [];
@@ -121,7 +121,9 @@ const checkEdges = () => {
   }
 };
 
-const regenerateAppleIfOutsidePLayableArea = (context: CanvasRenderingContext2D) => {
+const regenerateAppleIfOutsidePLayableArea = (
+  context: CanvasRenderingContext2D
+) => {
   if (appleX > tileCount || appleY > tileCount) {
     appleX = Math.floor(Math.random() * tileCount);
     appleY = Math.floor(Math.random() * tileCount);
@@ -174,30 +176,30 @@ const eatAndGenerateApple = (context: CanvasRenderingContext2D) => {
 };
 
 const keyPush = (evt: KeyboardEvent) => {
-  console.log('KEY: ', evt.key, ' CODE: ', evt.code);
+  console.log("KEY: ", evt.key, " CODE: ", evt.code);
   switch (evt.key) {
-    case 'Escape':
+    case "Escape":
       paused = !paused;
       break;
-    case 'ArrowLeft':
+    case "ArrowLeft":
       if (xVelocity < 1) {
         xVelocity = -1;
         yVelocity = 0;
       }
       break;
-    case 'ArrowUp':
+    case "ArrowUp":
       if (yVelocity < 1) {
         xVelocity = 0;
         yVelocity = -1;
       }
       break;
-    case 'ArrowRight':
+    case "ArrowRight":
       if (xVelocity > -1) {
         xVelocity = 1;
         yVelocity = 0;
       }
       break;
-    case 'ArrowDown':
+    case "ArrowDown":
       if (yVelocity > -1) {
         xVelocity = 0;
         yVelocity = 1;

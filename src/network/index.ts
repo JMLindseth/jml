@@ -1,10 +1,6 @@
 import axios from "axios";
 
-function get<T>(
-  url: string,
-  setMethod: (element: T) => void,
-  defaultValue: T
-) {
+function get<T>(url: string, setMethod: (element: T) => void, defaultValue: T) {
   axios
     .get(url, {
       headers: {
