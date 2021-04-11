@@ -1,6 +1,6 @@
 import Page from "../../Page";
 import styled from "styled-components";
-import {useRef} from "react";
+import { useRef } from "react";
 import DoubleArrowDown from "../../img/doubleArrowDown";
 import Intro from "./Intro";
 import Buzzword from "./Buzzword";
@@ -28,34 +28,36 @@ const ArrowButton = styled.button`
 `;
 
 const ColoredArrow = styled(DoubleArrowDown)`
-  fill: ${({theme}) => theme.text};
+  fill: ${({ theme }) => theme.text};
 
   &:hover {
-    padding-top: .5em;
+    padding-top: 0.5em;
   }
-`
+`;
 
 const Frontpage = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const onClickArrow = () => {
     const top = ref.current?.getBoundingClientRect().height;
-    return window.scrollTo({top: top, behavior: "smooth"});
+    return window.scrollTo({ top: top, behavior: "smooth" });
   };
 
-  return (<Page>
-    <ContentBlock ref={ref}>
-      <Buzzword/>
-      <ArrowButton tabIndex={-1} onClick={onClickArrow} aria-hidden>
-        <ColoredArrow/>
-      </ArrowButton>
-    </ContentBlock>
+  return (
+    <Page>
+      <ContentBlock ref={ref}>
+        <Buzzword />
+        <ArrowButton tabIndex={-1} onClick={onClickArrow} aria-hidden>
+          <ColoredArrow />
+        </ArrowButton>
+      </ContentBlock>
 
-    <ContentBlock>
-      <Intro/>
-      <Quote/>
-    </ContentBlock>
-  </Page>)
-}
+      <ContentBlock>
+        <Intro />
+        <Quote />
+      </ContentBlock>
+    </Page>
+  );
+};
 
 export default Frontpage;

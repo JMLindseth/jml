@@ -1,7 +1,9 @@
 const Intro = () => {
-  return (<div>
-    <p>Test!</p>
-  </div>)
-}
+  return (
+    <div>
+      <p>Test!</p>
+    </div>
+  );
+};
 
 export default Intro;

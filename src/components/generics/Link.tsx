@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Link = styled.a`
-  padding: 0 .5em;
+  padding: 0 0.5em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -19,11 +19,12 @@ const Link = styled.a`
   padding: ~"calc(.475rem - 1px) 2.5rem calc(.525rem - 1px) 2.5rem";
   min-height: 2.5rem;
   vertical-align: middle;
-  color: ${({ theme }) => theme.button.text};;
+  color: ${({ theme }) => theme.button.text};
 
-  &:focus, &:focus {
+  &:focus,
+  &:focus {
     outline: none;
     box-shadow: 0 0 0 3px ${({ theme }) => theme.button.hoverShadow};
   }
-`
+`;
 export default Link;

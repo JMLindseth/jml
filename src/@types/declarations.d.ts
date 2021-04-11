@@ -1,1 +1,1 @@
-declare module "react-animated-text"
+declare module "react-animated-text";

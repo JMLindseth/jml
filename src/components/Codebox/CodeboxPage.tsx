@@ -2,13 +2,15 @@ import Page from "../../Page";
 import Codebox from "./Codebox";
 
 const texts = {
-    title: 'Codebox'
-}
+  title: "Codebox",
+};
 
 const CodeboxPage = () => {
-    return (<Page title={texts.title}>
-        <Codebox />
-        </Page>)
-}
+  return (
+    <Page title={texts.title}>
+      <Codebox />
+    </Page>
+  );
+};
 
 export default CodeboxPage;
