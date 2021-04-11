@@ -1,14 +1,7 @@
-import styled from "styled-components";
-
-const StyledThing = styled.div`
-  min-height: 110vh;
-  padding: 20vmin 5vmin;
-`
-
 const Intro = () => {
-  return (<StyledThing>
+  return (<div>
     <p>Test!</p>
-  </StyledThing>)
+  </div>)
 }
 
 export default Intro;
