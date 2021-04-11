@@ -176,7 +176,6 @@ const eatAndGenerateApple = (context: CanvasRenderingContext2D) => {
 };
 
 const keyPush = (evt: KeyboardEvent) => {
-  console.log("KEY: ", evt.key, " CODE: ", evt.code);
   switch (evt.key) {
     case "Escape":
       paused = !paused;
