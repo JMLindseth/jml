@@ -1,3 +1,4 @@
+import React from "react";
 import { Wave } from "react-animated-text";
 import styled from "styled-components";
 import { randomElementFromArray } from "../../utils/arrayUtils";

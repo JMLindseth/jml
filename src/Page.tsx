@@ -1,3 +1,4 @@
+import React, { ReactNode } from "react";
 import styled from "styled-components";
 import DocumentTitle from "react-document-title";
 import NavigationBar from "./NavigationBar";
@@ -9,7 +10,7 @@ import { GlobalStyles } from "./components/Globalstyle";
 
 interface PageProps {
   title?: string;
-  children?: any;
+  children?: ReactNode;
 }
 
 const PageWrapper = styled.div`

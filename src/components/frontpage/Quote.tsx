@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { randomElementFromArray } from "../../utils/arrayUtils";
 import { useEffect, useState } from "react";

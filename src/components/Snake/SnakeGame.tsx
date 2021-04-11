@@ -21,10 +21,10 @@ const SnakeGame = () => {
   };
 
   useEffect(() => {
-    let element: HTMLCanvasElement = document.getElementById(
+    const element: HTMLCanvasElement = document.getElementById(
       "gc"
     ) as HTMLCanvasElement;
-    let context = element.getContext("2d");
+    const context = element.getContext("2d") as CanvasRenderingContext2D;
     document.addEventListener("keydown", keyPush);
     setInterval(() => game(context), 1000 / 15);
   }, []);
@@ -48,20 +48,25 @@ const SnakeGame = () => {
   );
 };
 
-let playerX: number = 10;
-let playerY: number = 10;
-let tileSize: number = 20;
+let playerX = 10;
+let playerY = 10;
+const tileSize = 20;
 let tileCount: number = 400 / 20;
-let appleX: number = 15;
-let appleY: number = 15;
-let xVelocity: number = 0;
-let yVelocity: number = 0;
-let paused: boolean = false;
+let appleX = 15;
+let appleY = 15;
+let xVelocity = 0;
+let yVelocity = 0;
+let paused = false;
 
-let trail: any[] = [];
-let tail: number = 5;
+interface TrailType {
+  x: number,
+  y: number,
+}
 
-const game = (context: any) => {
+const trail: TrailType[] = [];
+let tail = 5;
+
+const game = (context: CanvasRenderingContext2D) => {
   if (paused) {
     paintCanvasBlack(context);
     displayPauseText(context);
@@ -80,12 +85,12 @@ const game = (context: any) => {
   }
 };
 
-const paintCanvasBlack = (context: any) => {
+const paintCanvasBlack = (context: CanvasRenderingContext2D) => {
   context.fillStyle = "black";
   context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 };
 
-const displayPauseText = (context: any) => {
+const displayPauseText = (context: CanvasRenderingContext2D) => {
   const pausedText = "PAUSED!";
 
   context.font = "30px Arial";
@@ -116,12 +121,12 @@ const checkEdges = () => {
   }
 };
 
-const regenerateAppleIfOutsidePLayableArea = (context: any) => {
+const regenerateAppleIfOutsidePLayableArea = (context: CanvasRenderingContext2D) => {
   if (appleX > tileCount || appleY > tileCount) {
     appleX = Math.floor(Math.random() * tileCount);
     appleY = Math.floor(Math.random() * tileCount);
 
-    const img = document.getElementById("appleId");
+    const img = document.getElementById("appleId") as CanvasImageSource;
     context.drawImage(
       img,
       appleX * tileSize,
@@ -132,7 +137,7 @@ const regenerateAppleIfOutsidePLayableArea = (context: any) => {
   }
 };
 
-const moveSnake = (context: any) => {
+const moveSnake = (context: CanvasRenderingContext2D) => {
   context.fillStyle = "lime";
   for (let i = 0; i < trail.length; i++) {
     context.fillRect(
@@ -151,14 +156,14 @@ const moveSnake = (context: any) => {
   }
 };
 
-const eatAndGenerateApple = (context: any) => {
+const eatAndGenerateApple = (context: CanvasRenderingContext2D) => {
   if (appleX === playerX && appleY === playerY) {
     tail++;
     appleX = Math.floor(Math.random() * tileCount);
     appleY = Math.floor(Math.random() * tileCount);
   }
 
-  const img = document.getElementById("appleId");
+  const img = document.getElementById("appleId") as CanvasImageSource;
   context.drawImage(
     img,
     appleX * tileSize,
@@ -168,30 +173,31 @@ const eatAndGenerateApple = (context: any) => {
   );
 };
 
-const keyPush = (evt: any) => {
-  switch (evt.keyCode) {
-    case 27:
+const keyPush = (evt: KeyboardEvent) => {
+  console.log('KEY: ', evt.key, ' CODE: ', evt.code);
+  switch (evt.key) {
+    case 'Escape':
       paused = !paused;
       break;
-    case 37:
+    case 'ArrowLeft':
       if (xVelocity < 1) {
         xVelocity = -1;
         yVelocity = 0;
       }
       break;
-    case 38:
+    case 'ArrowUp':
       if (yVelocity < 1) {
         xVelocity = 0;
         yVelocity = -1;
       }
       break;
-    case 39:
+    case 'ArrowRight':
       if (xVelocity > -1) {
         xVelocity = 1;
         yVelocity = 0;
       }
       break;
-    case 40:
+    case 'ArrowDown':
       if (yVelocity > -1) {
         xVelocity = 0;
         yVelocity = 1;

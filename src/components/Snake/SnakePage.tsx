@@ -1,3 +1,4 @@
+import React from "react";
 import SnakeGame from "./SnakeGame";
 import Page from "../../Page";
 

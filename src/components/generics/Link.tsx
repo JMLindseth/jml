@@ -15,16 +15,16 @@ const Link = styled.a`
   line-height: 1.375rem;
   text-transform: uppercase;
   text-decoration: none;
-  background-color: ${({ theme }) => theme.button.background};
+  background-color: ${props => props.theme.button.background};
   padding: ~"calc(.475rem - 1px) 2.5rem calc(.525rem - 1px) 2.5rem";
   min-height: 2.5rem;
   vertical-align: middle;
-  color: ${({ theme }) => theme.button.text};
+  color: ${props => props.theme.button.text};
 
   &:focus,
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px ${({ theme }) => theme.button.hoverShadow};
+    box-shadow: 0 0 0 3px ${props => props.theme.button.focusShadow};
   }
 `;
 export default Link;
