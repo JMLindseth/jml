@@ -40,9 +40,7 @@ const Buzzword = () => {
   });
 
   return (
-    <BuzzwordBox
-      onClick={() => setActiveWord(randomElementFromArray(texts.buzzwords))}
-    >
+    <BuzzwordBox>
       <Wave
         text={activeWord}
         speed={4}
