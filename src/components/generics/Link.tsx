@@ -21,8 +21,7 @@ const Link = styled.a`
   vertical-align: middle;
   color: ${(props) => props.theme.button.text};
 
-  &:focus,
-  &:focus {
+  &:focus, :hover {
     outline: none;
     box-shadow: 0 0 0 3px ${(props) => props.theme.button.focusShadow};
   }
