@@ -15,6 +15,20 @@ const texts = {
 
 const BuzzwordBox = styled.div`
   font-size: min(10vw, 10em);
+  > div > span{
+    font-weight: lighter;
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: -16px 10px 15px black;
+    letter-spacing: -0.05em;
+    font-family: Garamond, Arial, sans-serif;
+    user-select: none;
+    transition: all 0.25s ease-out;
+    
+    :hover {
+      text-shadow: -15px 5px 15px black;
+    }
+  }
 `;
 
 const getNewWord = (activeWord: string) => {
