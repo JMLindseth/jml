@@ -10,23 +10,23 @@ export interface Theme {
 }
 
 export const lightTheme: Theme = {
-  body: "#D9E2EC",
-  text: "#243B53",
+  body: "#FAFAFA",
+  text: "#212121",
   toggleButtonBackground: "#363537",
   button: {
-    background: "#BCCCDC",
-    text: "#334E68",
+    background: "#F5F5F5",
+    text: "#424242",
     focusShadow: "#829AB1",
   },
 };
 
 export const darkTheme: Theme = {
-  body: "#243B53",
-  text: "#D9E2EC",
+  body: "#212121",
+  text: "#FAFAFA",
   toggleButtonBackground: "#999",
   button: {
-    background: "#334E68",
-    text: "#BCCCDC",
+    background: "#424242",
+    text: "#F5F5F5",
     focusShadow: "#627D98",
   },
 };
