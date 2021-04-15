@@ -56,7 +56,7 @@ const SnakeGame = () => {
 
   const changeSize = (element: Option) => {
     setSize(parseInt(element.value));
-    gameVariables.tileCount = parseInt(element.value) / 20;
+    gameVariables.tileCount = parseInt(element.value) / gameVariables.tileSize;
   };
 
   useEffect(() => {
@@ -231,7 +231,7 @@ const keyPush = (evt: KeyboardEvent) => {
   switch (evt.key) {
     case "Escape":
       if (gameVariables.gameOver) {
-        gameVariables = {...defaultGameVariables}
+        gameVariables = {...defaultGameVariables, tileCount: gameVariables.tileCount}
       }
       else {
         gameVariables.paused = !gameVariables.paused;
