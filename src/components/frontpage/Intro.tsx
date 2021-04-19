@@ -7,8 +7,9 @@ const Opening = styled.p`
 
 const texts = {
   opening: "Velkommen! Jeg heter John Martin, og jeg skriver kode.",
-  body: "Her kan jeg finne på å legge til ting jeg lager og/eller finner som kan være interessant å dele."
-}
+  body:
+    "Her kan jeg finne på å legge til ting jeg lager og/eller finner som kan være interessant å dele.",
+};
 
 const Intro = () => {
   return (

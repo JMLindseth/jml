@@ -3,7 +3,7 @@ import GitHubLogo from "../img/GitHubLogo.png";
 import styled from "styled-components";
 
 const Logo = styled.img`
-  margin-left: .5em;
+  margin-left: 0.5em;
   height: auto;
   width: 3em;
 `;
@@ -11,11 +11,13 @@ const Logo = styled.img`
 const GitHubLink = () => {
   const url = "https://github.com/jmlindseth";
 
-  return (<>
-    <a href={url} target="_blank" rel="noopener noreferrer">
-      <Logo src={GitHubLogo} />
-    </a>
-  </>)
-}
+  return (
+    <>
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <Logo src={GitHubLogo} />
+      </a>
+    </>
+  );
+};
 
 export default GitHubLink;

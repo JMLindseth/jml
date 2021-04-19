@@ -15,7 +15,7 @@ const texts = {
 
 const BuzzwordBox = styled.div`
   font-size: min(10vw, 10em);
-  > div > span{
+  > div > span {
     font-weight: lighter;
     position: relative;
     text-transform: uppercase;
@@ -24,7 +24,7 @@ const BuzzwordBox = styled.div`
     font-family: Garamond, Arial, sans-serif;
     user-select: none;
     transition: all 0.25s ease-out;
-    
+
     :hover {
       text-shadow: -15px 5px 15px black;
     }

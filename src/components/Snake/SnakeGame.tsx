@@ -46,10 +46,10 @@ const defaultGameVariables: GameVariables = {
   trail: [] as Trail[],
   tail: 5,
   score: 0,
-  gameOver: false
+  gameOver: false,
 };
 
-let gameVariables = {...defaultGameVariables};
+let gameVariables = { ...defaultGameVariables };
 
 const SnakeGame = () => {
   const [size, setSize] = React.useState(400);
@@ -71,7 +71,7 @@ const SnakeGame = () => {
   const options: Option[] = [
     { value: "400", label: "liten" },
     { value: "600", label: "medium" },
-    { value: "1000", label: "stor" }
+    { value: "1000", label: "stor" },
   ];
 
   return (
@@ -117,19 +117,23 @@ const paintCanvasBlack = (context: CanvasRenderingContext2D) => {
   context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 };
 
-const drawText = (context: CanvasRenderingContext2D, text: string, font?: string, fillStyle?: string, textAllign?: CanvasTextAlign, x?: number, y?: number) => {
+const drawText = (
+  context: CanvasRenderingContext2D,
+  text: string,
+  font?: string,
+  fillStyle?: string,
+  textAllign?: CanvasTextAlign,
+  x?: number,
+  y?: number
+) => {
   context.font = font ? font : "30px Arial";
   context.fillStyle = fillStyle ? fillStyle : "red";
   context.textAlign = textAllign ? textAllign : "center";
-  const xCoordinate = x ? x : context.canvas.width / 2
-  const yCoordinate = y ? y : context.canvas.height / 2
+  const xCoordinate = x ? x : context.canvas.width / 2;
+  const yCoordinate = y ? y : context.canvas.height / 2;
 
-  context.fillText(
-    text,
-    xCoordinate,
-    yCoordinate
-  );
-}
+  context.fillText(text, xCoordinate, yCoordinate);
+};
 
 const displayPauseText = (context: CanvasRenderingContext2D) => {
   const pausedText = "PAUSED!";
@@ -139,18 +143,42 @@ const displayPauseText = (context: CanvasRenderingContext2D) => {
 
 const displayGameOverScreen = (context: CanvasRenderingContext2D) => {
   const gameOverText = "GAME OVER! :(";
-  const scoreText = `You got ${gameVariables.score} points! :D`
-  const newGameText = `Press Escape to start a new game`
+  const scoreText = `You got ${gameVariables.score} points! :D`;
+  const newGameText = `Press Escape to start a new game`;
 
   drawText(context, gameOverText);
-  drawText(context, scoreText, "20px Arial", "green", "center", context.canvas.width / 2, (context.canvas.height / 2) + 40)
-  drawText(context, newGameText, "15px Arial", "white", "center", context.canvas.width / 2, (context.canvas.height / 2) + 70)
+  drawText(
+    context,
+    scoreText,
+    "20px Arial",
+    "green",
+    "center",
+    context.canvas.width / 2,
+    context.canvas.height / 2 + 40
+  );
+  drawText(
+    context,
+    newGameText,
+    "15px Arial",
+    "white",
+    "center",
+    context.canvas.width / 2,
+    context.canvas.height / 2 + 70
+  );
 };
 
 const displayScore = (context: CanvasRenderingContext2D) => {
   const score = `${gameVariables.score}`;
 
-  drawText(context, score, "20px Arial", "green", "right", context.canvas.width - 10, 20)
+  drawText(
+    context,
+    score,
+    "20px Arial",
+    "green",
+    "right",
+    context.canvas.width - 10,
+    20
+  );
 };
 
 const checkEdges = () => {
@@ -174,7 +202,10 @@ const checkEdges = () => {
 const regenerateAppleIfOutsidePLayableArea = (
   context: CanvasRenderingContext2D
 ) => {
-  if (gameVariables.appleX > gameVariables.tileCount || gameVariables.appleY > gameVariables.tileCount) {
+  if (
+    gameVariables.appleX > gameVariables.tileCount ||
+    gameVariables.appleY > gameVariables.tileCount
+  ) {
     gameVariables.appleX = Math.floor(Math.random() * gameVariables.tileCount);
     gameVariables.appleY = Math.floor(Math.random() * gameVariables.tileCount);
 
@@ -198,19 +229,29 @@ const moveSnake = (context: CanvasRenderingContext2D) => {
       gameVariables.tileSize - 2,
       gameVariables.tileSize - 2
     );
-    if (gameVariables.trail[i].x === gameVariables.playerX && gameVariables.trail[i].y === gameVariables.playerY && gameVariables.score !== 0) {
+    if (
+      gameVariables.trail[i].x === gameVariables.playerX &&
+      gameVariables.trail[i].y === gameVariables.playerY &&
+      gameVariables.score !== 0
+    ) {
       gameVariables.gameOver = true;
       break;
     }
   }
-  gameVariables.trail.push({ x: gameVariables.playerX, y: gameVariables.playerY });
+  gameVariables.trail.push({
+    x: gameVariables.playerX,
+    y: gameVariables.playerY,
+  });
   while (gameVariables.trail.length > gameVariables.tail) {
     gameVariables.trail.shift();
   }
 };
 
 const eatAndGenerateApple = (context: CanvasRenderingContext2D) => {
-  if (gameVariables.appleX === gameVariables.playerX && gameVariables.appleY === gameVariables.playerY) {
+  if (
+    gameVariables.appleX === gameVariables.playerX &&
+    gameVariables.appleY === gameVariables.playerY
+  ) {
     gameVariables.tail++;
     gameVariables.score++;
     gameVariables.appleX = Math.floor(Math.random() * gameVariables.tileCount);
@@ -231,9 +272,11 @@ const keyPush = (evt: KeyboardEvent) => {
   switch (evt.key) {
     case "Escape":
       if (gameVariables.gameOver) {
-        gameVariables = {...defaultGameVariables, tileCount: gameVariables.tileCount}
-      }
-      else {
+        gameVariables = {
+          ...defaultGameVariables,
+          tileCount: gameVariables.tileCount,
+        };
+      } else {
         gameVariables.paused = !gameVariables.paused;
       }
       break;
