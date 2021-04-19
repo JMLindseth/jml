@@ -10,6 +10,14 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install deps
+        run: |
+          npm install
+      - name: Prettier check 💅
+        run: |
+          npx prettier --check .
       - uses: actions/checkout@v2
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
