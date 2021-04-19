@@ -7,6 +7,7 @@ import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/UseDarkmode";
 import Toggle from "./components/Toggler";
 import { GlobalStyles } from "./components/Globalstyle";
+import GitHubLink from "./components/GitHubLink";
 
 interface PageProps {
   title?: string;
@@ -20,7 +21,7 @@ const PageWrapper = styled.div`
   align-items: center;
 `;
 
-const NavAndTheme = styled.div`
+const Header = styled.div`
   display: flex;
   flex-direction: row;
 `;
@@ -48,13 +49,14 @@ const Page = (pageProps: PageProps) => {
         <GlobalStyles />
         <DocumentTitle title={fullTitle(title)}>
           <PageWrapper>
-            <NavAndTheme>
+            <Header>
               <NavigationBar />
               <Toggle
                 theme={theme as string}
                 toggleTheme={themeToggler as () => void}
               />
-            </NavAndTheme>
+              <GitHubLink />
+            </Header>
             <MainContent>
               <h1>{title}</h1>
               {children}
