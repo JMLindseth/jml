@@ -9,7 +9,7 @@ const Logo = styled.img`
 `;
 
 const GitHubLink = () => {
-  const url = "https://github.com/jmlindseth";
+  const url = "https://github.com/JMLindseth/jml";
 
   return (
     <>
