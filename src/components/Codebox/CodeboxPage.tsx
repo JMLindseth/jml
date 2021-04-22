@@ -3,7 +3,7 @@ import Page from "../../Page";
 import Codebox from "./Codebox";
 
 const texts = {
-  title: "Codebox",
+  title: "Interesting Kotlin stuff",
 };
 
 const CodeboxPage = () => {
