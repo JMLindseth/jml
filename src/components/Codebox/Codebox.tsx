@@ -12,7 +12,7 @@ const texts = {
 
 const DropdownRow = styled.div`
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 3fr 1fr;
 `;
 
 interface CodeAreaProps {
