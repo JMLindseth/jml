@@ -50,6 +50,7 @@ const Codebox = () => {
       value: codeSnippets.backtickMethodName,
       label: "Function name in backticks",
     },
+    { value: codeSnippets.trailingComma, label: "Trailing comma" },
   ];
 
   const [fontSize, setFontSize]: [number, (arg: number) => void] = useState(16);

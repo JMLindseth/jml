@@ -64,7 +64,7 @@ fun \`legal function name\`() {
 
 @Test
 fun \`other characters are also allowed * ~ @ £\`() {
-    println("Doesn't work on android")
+    println("Backtick functions don't work on android")
 }
 
 fun main() {
@@ -73,11 +73,22 @@ fun main() {
 }
 `;
 
+const trailingComma = `
+// These are ecnouraged by the Kotlin coding conventions
+// https://kotlinlang.org/docs/coding-conventions.html#trailing-commas
+class Person(
+    val firstName: String,
+    val lastName: String,
+    val age: Int, // trailing comma
+)
+`;
+
 const codeSnippets = {
   extensionFunction,
   higherOrder,
   infixMethod,
   backtickMethodName,
+  trailingComma,
 };
 
 export default codeSnippets;
