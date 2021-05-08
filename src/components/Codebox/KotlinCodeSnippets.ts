@@ -69,7 +69,7 @@ fun \`other characters are also allowed * ~ @ £\`() {
 
 fun main() {
     \`legal method name\`() // => This should only be used in tests
-    \`other characters are also allowed * ~ @ £\`() // => Doesn't work on android
+    \`other characters are also allowed * ~ @ £\`() // => Backtick functions don't work on android
 }
 `;
 
