@@ -64,12 +64,12 @@ fun \`legal function name\`() {
 
 @Test
 fun \`other characters are also allowed * ~ @ £\`() {
-    println("Backtick functions don't work on android")
+    println("Fancy methods")
 }
 
 fun main() {
-    \`legal method name\`() // => This should only be used in tests
-    \`other characters are also allowed * ~ @ £\`() // => Backtick functions don't work on android
+    \`legal function name\`() // => This should only be used in tests
+    \`other characters are also allowed * ~ @ £\`() // => Fancy methods
 }
 `;
 
