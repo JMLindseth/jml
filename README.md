@@ -6,4 +6,5 @@ Laget med Typescript og React
 
 ## Kjør lokalt
 
-Kjør med `npm run start` det starter appen på localhost:3000
+Bygg med `npm run build`
+Kjør med `npm run serve` (krever at du har bygget først) -> localhost:4173
