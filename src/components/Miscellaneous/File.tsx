@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import marked from "marked";
+import { marked } from "marked";
 import styled from "styled-components";
 
 interface FileProps {
@@ -38,7 +38,7 @@ const File = ({ path, returnFunction }: FileProps) => {
   const [fileString, setFileString] = useState("");
 
   getFileAsString(path, setFileString);
-  const rawMarkup = marked(fileString);
+  const rawMarkup = marked.parse(fileString);
 
   return (
     <>
