@@ -25,7 +25,7 @@ const Button = styled.button`
 
 const getFileAsString = (
   path: string,
-  setFileString: (newFileString: string) => void
+  setFileString: (newFileString: string) => void,
 ) => {
   fetch(path)
     .then((response) => response.text())

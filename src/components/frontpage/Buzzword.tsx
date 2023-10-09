@@ -43,7 +43,7 @@ const getNewWord = (activeWord: string) => {
 
 const Buzzword = () => {
   const [activeWord, setActiveWord] = useState(
-    randomElementFromArray(texts.buzzwords)
+    randomElementFromArray(texts.buzzwords),
   );
 
   // Infinite loop of re-rendering because we set state while listening to state changes, probably not a great idea

@@ -61,7 +61,7 @@ const SnakeGame = () => {
 
   useEffect(() => {
     const element: HTMLCanvasElement = document.getElementById(
-      "gc"
+      "gc",
     ) as HTMLCanvasElement;
     const context = element.getContext("2d") as CanvasRenderingContext2D;
     document.addEventListener("keydown", keyPush);
@@ -124,7 +124,7 @@ const drawText = (
   fillStyle?: string,
   textAllign?: CanvasTextAlign,
   x?: number,
-  y?: number
+  y?: number,
 ) => {
   context.font = font ? font : "30px Arial";
   context.fillStyle = fillStyle ? fillStyle : "red";
@@ -154,7 +154,7 @@ const displayGameOverScreen = (context: CanvasRenderingContext2D) => {
     "green",
     "center",
     context.canvas.width / 2,
-    context.canvas.height / 2 + 40
+    context.canvas.height / 2 + 40,
   );
   drawText(
     context,
@@ -163,7 +163,7 @@ const displayGameOverScreen = (context: CanvasRenderingContext2D) => {
     "white",
     "center",
     context.canvas.width / 2,
-    context.canvas.height / 2 + 70
+    context.canvas.height / 2 + 70,
   );
 };
 
@@ -177,7 +177,7 @@ const displayScore = (context: CanvasRenderingContext2D) => {
     "green",
     "right",
     context.canvas.width - 10,
-    20
+    20,
   );
 };
 
@@ -200,7 +200,7 @@ const checkEdges = () => {
 };
 
 const regenerateAppleIfOutsidePLayableArea = (
-  context: CanvasRenderingContext2D
+  context: CanvasRenderingContext2D,
 ) => {
   if (
     gameVariables.appleX > gameVariables.tileCount ||
@@ -215,7 +215,7 @@ const regenerateAppleIfOutsidePLayableArea = (
       gameVariables.appleX * gameVariables.tileSize,
       gameVariables.appleY * gameVariables.tileSize,
       gameVariables.tileSize - 2,
-      gameVariables.tileSize - 2
+      gameVariables.tileSize - 2,
     );
   }
 };
@@ -227,7 +227,7 @@ const moveSnake = (context: CanvasRenderingContext2D) => {
       gameVariables.trail[i].x * gameVariables.tileSize,
       gameVariables.trail[i].y * gameVariables.tileSize,
       gameVariables.tileSize - 2,
-      gameVariables.tileSize - 2
+      gameVariables.tileSize - 2,
     );
     if (
       gameVariables.trail[i].x === gameVariables.playerX &&
@@ -264,7 +264,7 @@ const eatAndGenerateApple = (context: CanvasRenderingContext2D) => {
     gameVariables.appleX * gameVariables.tileSize,
     gameVariables.appleY * gameVariables.tileSize,
     gameVariables.tileSize - 2,
-    gameVariables.tileSize - 2
+    gameVariables.tileSize - 2,
   );
 };
 
