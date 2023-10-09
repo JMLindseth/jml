@@ -33,6 +33,7 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
+    "dev": "vite build --watch",
     "serve": "vite preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage --watch=false"
