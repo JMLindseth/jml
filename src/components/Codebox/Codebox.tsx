@@ -35,7 +35,7 @@ const CodeArea = styled(CodeMirror)<CodeAreaProps>`
 
 const Codebox = () => {
   const [activeCode, setActiveCode]: [string, (arg: string) => void] = useState(
-    'Val myString = "Hello World!"'
+    'Val myString = "Hello World!"',
   );
 
   const changeSize = (chosenElement: Option) => {
