@@ -3,10 +3,8 @@ import Overview from "./Overview";
 import File from "./File";
 
 const Miscellaneous = () => {
-  const [filePath, setFilePath]: [
-    string,
-    (newFilePath: string) => void
-  ] = useState("");
+  const [filePath, setFilePath]: [string, (newFilePath: string) => void] =
+    useState("");
 
   const changeFile = (newFile: string) => {
     setFilePath(newFile);

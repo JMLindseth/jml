@@ -32,10 +32,8 @@ const QuoteBox = styled.div`
 `;
 
 const Quote = () => {
-  const [quotes, setQuotes]: [
-    QuoteType[],
-    (quotes: QuoteType[]) => void
-  ] = useState(defaultQuotes);
+  const [quotes, setQuotes]: [QuoteType[], (quotes: QuoteType[]) => void] =
+    useState(defaultQuotes);
   const quoteUrl = "https://type.fit/api/quotes";
 
   useEffect(() => {
