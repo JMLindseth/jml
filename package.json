@@ -14,7 +14,6 @@
     "@vitejs/plugin-react-swc": "3.4.0",
     "axios": "1.5.1",
     "codemirror": "5.60.0",
-    "marked": "9.1.0",
     "react": "17.0.2",
     "react-animated-text": "0.1.4",
     "react-codemirror2": "7.3.0",
