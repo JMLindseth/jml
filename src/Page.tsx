@@ -2,9 +2,7 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 import DocumentTitle from "react-document-title";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./components/Themes";
-import { useDarkMode } from "./components/UseDarkmode";
-import Toggle from "./components/Toggler";
+import { darkTheme } from "./components/Themes";
 import { GlobalStyles } from "./components/Globalstyle";
 
 interface PageProps {
@@ -37,22 +35,12 @@ const fullTitle = (title?: string) => {
 const Page = (pageProps: PageProps) => {
   const { title, children } = pageProps;
 
-  const [theme, themeToggler, mountedComponent] = useDarkMode();
-  const themeMode = theme === "light" ? lightTheme : darkTheme;
-
-  if (!mountedComponent) return <div />;
   return (
-    <ThemeProvider theme={themeMode}>
+    <ThemeProvider theme={darkTheme}>
       <>
         <GlobalStyles />
         <DocumentTitle title={fullTitle(title)}>
           <PageWrapper>
-            <Header>
-              <Toggle
-                theme={theme as string}
-                toggleTheme={themeToggler as () => void}
-              />
-            </Header>
             <MainContent>
               <h1>{title}</h1>
               {children}
