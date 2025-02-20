@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import DocumentTitle from "react-document-title";
 import { ThemeProvider } from "styled-components";
 import { darkTheme } from "./components/Themes";
 import { GlobalStyles } from "./components/Globalstyle";
@@ -39,14 +38,12 @@ const Page = (pageProps: PageProps) => {
     <ThemeProvider theme={darkTheme}>
       <>
         <GlobalStyles />
-        <DocumentTitle title={fullTitle(title)}>
-          <PageWrapper>
-            <MainContent>
-              <h1>{title}</h1>
-              {children}
-            </MainContent>
-          </PageWrapper>
-        </DocumentTitle>
+        <PageWrapper>
+          <MainContent>
+            <h1>{title}</h1>
+            {children}
+          </MainContent>
+        </PageWrapper>
       </>
     </ThemeProvider>
   );
