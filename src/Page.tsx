@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import DocumentTitle from "react-document-title";
-import NavigationBar from "./NavigationBar";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/UseDarkmode";
@@ -50,7 +49,6 @@ const Page = (pageProps: PageProps) => {
         <DocumentTitle title={fullTitle(title)}>
           <PageWrapper>
             <Header>
-              <NavigationBar />
               <Toggle
                 theme={theme as string}
                 toggleTheme={themeToggler as () => void}
