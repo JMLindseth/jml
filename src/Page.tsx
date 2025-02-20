@@ -6,7 +6,6 @@ import { lightTheme, darkTheme } from "./components/Themes";
 import { useDarkMode } from "./components/UseDarkmode";
 import Toggle from "./components/Toggler";
 import { GlobalStyles } from "./components/Globalstyle";
-import GitHubLink from "./components/GitHubLink";
 
 interface PageProps {
   title?: string;
@@ -53,7 +52,6 @@ const Page = (pageProps: PageProps) => {
                 theme={theme as string}
                 toggleTheme={themeToggler as () => void}
               />
-              <GitHubLink />
             </Header>
             <MainContent>
               <h1>{title}</h1>
