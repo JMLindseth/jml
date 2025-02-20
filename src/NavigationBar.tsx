@@ -14,7 +14,6 @@ const LinkRightPadded = styled(Link)`
 
 const texts = {
   home: "Home!",
-  snake: "Snake",
 };
 
 interface LinkProps {
@@ -30,7 +29,6 @@ const NavigationBar = () => {
   return (
     <NavigationBarGrid>
       <LinkWrapped text={texts.home} href={"/"} />
-      <LinkWrapped text={texts.snake} href={"/snake"} />
     </NavigationBarGrid>
   );
 };
