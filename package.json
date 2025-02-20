@@ -5,7 +5,6 @@
   "dependencies": {
     "@testing-library/react": "11.1.0",
     "@testing-library/user-event": "12.1.10",
-    "@types/marked": "2.0.2",
     "@types/node": "20.8.4",
     "@types/react": "17.0.0",
     "@types/react-document-title": "2.0.4",
