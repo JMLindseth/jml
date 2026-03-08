@@ -1,11 +1,109 @@
 [
   {
-    "id": "eksempel-konsert-2024",
-    "dato": "2024-08-15",
+    "id": "jinjer-sentrum-scene-2026",
+    "dato": "2026-02-28",
+    "sted": "Sentrum Scene, Oslo",
+    "band": [
+      { "navn": "Jinjer" },
+      { "navn": "Unprocessed" },
+      { "navn": "Textures" }
+    ],
+    "bilder": [
+      "jinjer1_v4iy2c",
+      "jinjer2_xdeg5d",
+      "jinjer3_ytwleq",
+      "jinjer4_wzoel9",
+      "jinjer5_h9fhmj",
+      "jinjer6_pxeg47",
+      "jinjer7_ga5cxn",
+      "jinjer8_ikika4",
+      "jinjer9_etwbgb",
+      "jinjer10_kiuzzw",
+      "jinjer11_flcbzq",
+      "jinjer12_yvdz78",
+      "jinjer13_tskq6y",
+      "jinjer14_jsnse3",
+      "jinjer15_yywtna",
+      "jinjer16_yblgum",
+      "jinjer17_zxcx1m",
+      "jinjer18_zacbor",
+      "jinjer19_ubg6fg"
+    ]
+  },
+  {
+    "id": "igorrr-rockefeller-2026",
+    "dato": "2026-02-21",
     "sted": "Rockefeller, Oslo",
     "band": [
-      { "navn": "Eksempelband" }
+      { "navn": "IGORRR" },
+      { "navn": "DVUNE" },
+      { "navn": "Thoughtcrimes" }
     ],
-    "bilder": []
+    "bilder": [
+      "igorrr1_v3y1fc",
+      "igorrr2_kxs8by",
+      "igorrr3_hphgh0",
+      "igorrr4_sp2qyy",
+      "igorrr5_zohrmg",
+      "igorrr6_a2ekfb",
+      "igorrr7_mrpql1",
+      "igorrr8_zoljem",
+      "igorrr9_nakop9",
+      "igorrr10_l1qruh"
+    ]
+  },
+  {
+    "id": "lorna-shore-sentrum-scene-2026",
+    "dato": "2026-02-18",
+    "sted": "Sentrum Scene, Oslo",
+    "band": [
+      { "navn": "Lorna Shore" },
+      { "navn": "Whitechapel" },
+      { "navn": "Shadow of Intent" },
+      { "navn": "Humanity's Last Breath" }
+    ],
+    "bilder": [
+      "lornashore1_rswk0t",
+      "lornashore2_yyszbz",
+      "lornashore3_ked2cf",
+      "lornashore4_nrybki",
+      "lornashore5_s6ft5d",
+      "lornashore6_gx6sh6",
+      "lornashore7_z5s1gq",
+      "lornashore8_w3mxpy",
+      "lornashore9_cfphmc",
+      "lornashore10_txnsgf",
+      "lornashore11_kvsnm0",
+      "lornashore12_lx8ont",
+      "lornashore13_iztgs4",
+      "lornashore14_atw5ja",
+      "lornashore15_nyg6ew",
+      "lornashore16_c6fyro",
+      "lornashore17_gq9qfc",
+      "lornashore18_xoalak",
+      "lornashore19_kdazvt"
+    ]
+  },
+  {
+    "id": "slaughter-to-prevail-sentrum-scene-2026",
+    "dato": "2026-01-28",
+    "sted": "Sentrum Scene, Oslo",
+    "band": [
+      { "navn": "Slaughter to Prevail" },
+      { "navn": "Dying Fetus" },
+      { "navn": "Suicide Silence" }
+    ],
+    "bilder": [
+      "slaughter1_i2ahnm",
+      "slaughter2_ibab7o",
+      "slaughter3_sdppnf",
+      "slaughter4_yfesb8",
+      "slaughter5_x7i4lu",
+      "slaughter6_fms21f",
+      "slaughter7_eulz29",
+      "slaughter8_dqavrn",
+      "slaughter9_hrluqy",
+      "slaughter10_fseskn"
+    ]
   }
 ]
