@@ -1,0 +1,164 @@
+.side {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.overskrift {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #c8c8d0;
+  margin-bottom: 2rem;
+}
+
+/* Søkeresultat-boks */
+.søkeresultat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.søkeresultatTittel {
+  font-size: 0.85rem;
+  color: rgba(200, 200, 210, 0.6);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.treffListe {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.treffKnapp {
+  background: none;
+  border: none;
+  color: #a0a8c0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0.3rem 0;
+  text-align: left;
+  transition: color 0.15s ease;
+}
+
+.treffKnapp:hover {
+  color: #d0d8f0;
+}
+
+/* Konsertliste */
+.konsertListe {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Konsert-kort */
+.konsertKort {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(38, 38, 44, 0.9) 0%,
+    rgba(24, 24, 28, 0.95) 100%
+  );
+  transition: border-color 0.2s ease;
+}
+
+.konsertKort:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.fremhevet {
+  border-color: rgba(140, 140, 200, 0.35) !important;
+  box-shadow: 0 0 0 1px rgba(140, 140, 200, 0.15);
+}
+
+/* Header-knapp */
+.konsertHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  text-align: left;
+  gap: 1rem;
+}
+
+.konsertHeader:hover .dato {
+  color: #e0e0ea;
+}
+
+.konsertInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  align-items: baseline;
+}
+
+.dato {
+  font-size: 0.8rem;
+  color: rgba(180, 180, 200, 0.55);
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.sted {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #c8c8d4;
+}
+
+.band {
+  font-size: 0.9rem;
+  color: rgba(180, 180, 200, 0.7);
+  letter-spacing: 0.01em;
+}
+
+.pil {
+  font-size: 0.65rem;
+  color: rgba(180, 180, 200, 0.4);
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+}
+
+.konsertHeader:hover .pil {
+  color: rgba(180, 180, 200, 0.7);
+}
+
+/* Bildegalleri */
+.galleri {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 4px;
+  padding: 0 4px 4px;
+}
+
+.bilde {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.ingenBilder {
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  color: rgba(180, 180, 200, 0.4);
+  font-style: italic;
+}
