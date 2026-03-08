@@ -1,10 +1,28 @@
 # JML
 
-Nettside for JMLindseth
+Nettside for JMLindseth.
 
-Laget med Typescript og React
+Laget med TypeScript, React og Vite.
 
-## Kjør lokalt
+## Utvikling
 
-Bygg med `npm run build`
-Kjør med `npm run serve` (krever at du har bygget først) -> localhost:4173
+Start dev-server med hot reload:
+
+```bash
+npm run start
+```
+
+Åpner på `localhost:5173` og oppdateres automatisk ved filendringer.
+
+## Bygg og forhåndsvis produksjon
+
+```bash
+npm run build    # kompilerer og bygger til dist/
+npm run serve    # forhåndsvis bygget lokalt på localhost:4173
+```
+
+## Kodesjekk
+
+```bash
+npx eslint src/
+```
