@@ -8,6 +8,31 @@
   padding: 0 1.5rem;
 }
 
+/* Tett wrapper rundt input — gløden klippes til denne */
+.glødWrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 6px;
+
+  --glød-x: 50%;
+  --glød-y: 50%;
+  --glød-styrke: 0;
+}
+
+.glødWrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    180px circle at var(--glød-x) var(--glød-y),
+    rgba(180, 180, 200, calc(var(--glød-styrke) * 0.18)),
+    transparent 70%
+  );
+}
+
 .søkefelt {
   width: 100%;
   padding: 0.85rem 1.25rem;
