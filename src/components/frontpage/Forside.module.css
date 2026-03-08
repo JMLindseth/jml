@@ -1,0 +1,51 @@
+.søkeboks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 560px;
+  padding: 0 1.5rem;
+}
+
+.søkefelt {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(
+    135deg,
+    rgba(48, 48, 52, 0.95) 0%,
+    rgba(28, 28, 30, 0.98) 60%,
+    rgba(38, 38, 42, 0.95) 100%
+  );
+  color: #e8e8ea;
+  font-size: 1rem;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  outline: none;
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(255, 255, 255, 0.05);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  appearance: none;
+}
+
+.søkefelt::placeholder {
+  color: rgba(200, 200, 205, 0.35);
+}
+
+.søkefelt:focus {
+  border-color: rgba(180, 180, 190, 0.35);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.6),
+    0 0 0 3px rgba(160, 160, 170, 0.1);
+}
+
+/* Fjern standard søke-ikon i Chrome/Safari */
+.søkefelt::-webkit-search-decoration,
+.søkefelt::-webkit-search-cancel-button {
+  appearance: none;
+}

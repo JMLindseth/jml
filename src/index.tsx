@@ -1,4 +1,3 @@
-import React from "react";
 import "./index.css";
 import AppRouter from "./routers/AppRouter";
 import { createRoot } from "react-dom/client";

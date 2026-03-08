@@ -1,35 +1,16 @@
-import React, { ReactNode } from "react";
-import styled from "styled-components";
+import { ReactNode } from "react";
+import stiler from "./Page.module.css";
 
-interface PageProps {
-  title?: string;
+interface SideProps {
   children?: ReactNode;
 }
 
-const PageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const MainContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Page = (pageProps: PageProps) => {
-  const { title, children } = pageProps;
-
+const Side = ({ children }: SideProps) => {
   return (
-    <PageWrapper>
-      <MainContent>
-        <h1>{title}</h1>
-        {children}
-      </MainContent>
-    </PageWrapper>
+    <div className={stiler.wrapper}>
+      <main className={stiler.innhold}>{children}</main>
+    </div>
   );
 };
 
-export default Page;
+export default Side;

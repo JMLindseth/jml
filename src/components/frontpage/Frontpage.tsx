@@ -1,14 +1,19 @@
-import React from "react";
-import Page from "../../Page";
+import Side from "../../Page";
+import stiler from "./Forside.module.css";
 
-const Frontpage = () => {
+const Forside = () => {
   return (
-    <Page
-      title={"Forside"}
-    >
-      <p>Hei, verden</p>
-    </Page>
+    <Side>
+      <div className={stiler.søkeboks}>
+        <input
+          className={stiler.søkefelt}
+          type="search"
+          placeholder="Søk…"
+          aria-label="Søk på nettstedet"
+        />
+      </div>
+    </Side>
   );
 };
 
-export default Frontpage;
+export default Forside;
