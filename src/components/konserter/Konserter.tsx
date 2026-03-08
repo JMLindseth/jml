@@ -4,6 +4,7 @@ import Side from "../../Page";
 import { bildUrl } from "../../utils/cloudinary";
 import type { Konsert } from "../../types/konsert";
 import konserterData from "../../data/konserter.json";
+import Lightbox from "../lightbox/Lightbox";
 import stiler from "./Konserter.module.css";
 
 const alleKonserter: Konsert[] = [...(konserterData as Konsert[])].sort(
@@ -27,21 +28,25 @@ const matcherSøk = (konsert: Konsert, søk: string): boolean => {
   );
 };
 
+interface ÅpentBilde {
+  bilder: string[];
+  indeks: number;
+}
+
 const Konserter = () => {
   const [searchParams] = useSearchParams();
   const søkeord = searchParams.get("q") ?? "";
   const [åpneKonserter, setÅpneKonserter] = useState<Set<string>>(new Set());
+  const [åpentBilde, setÅpentBilde] = useState<ÅpentBilde | null>(null);
   const kortRefs = useRef<Map<string, HTMLElement>>(new Map());
 
   const treff = søkeord
     ? alleKonserter.filter((k) => matcherSøk(k, søkeord))
     : [];
 
-  // Ekspander og scroll til treff når søkeord er satt
   useEffect(() => {
     if (!søkeord || treff.length === 0) return;
     setÅpneKonserter(new Set(treff.map((k) => k.id)));
-    // Scroll til første treff etter neste render
     setTimeout(() => {
       const førsteTreff = treff[0];
       kortRefs.current.get(førsteTreff.id)?.scrollIntoView({
@@ -122,10 +127,7 @@ const Konserter = () => {
                       {konsert.band.map((b) => b.navn).join(" · ")}
                     </span>
                   </div>
-                  <span
-                    className={stiler.pil}
-                    aria-hidden="true"
-                  >
+                  <span className={stiler.pil} aria-hidden="true">
                     {erÅpen ? "▲" : "▼"}
                   </span>
                 </button>
@@ -136,13 +138,19 @@ const Konserter = () => {
                       <p className={stiler.ingenBilder}>Ingen bilder ennå.</p>
                     ) : (
                       konsert.bilder.map((publicId, i) => (
-                        <img
+                        <button
                           key={publicId}
-                          src={bildUrl(publicId, 800)}
-                          alt={`${konsert.band.map((b) => b.navn).join(", ")} — bilde ${i + 1}`}
-                          className={stiler.bilde}
-                          loading="lazy"
-                        />
+                          className={stiler.bildKnapp}
+                          onClick={() => setÅpentBilde({ bilder: konsert.bilder, indeks: i })}
+                          aria-label={`Åpne bilde ${i + 1} av ${konsert.bilder.length}`}
+                        >
+                          <img
+                            src={bildUrl(publicId, 400)}
+                            alt={`${konsert.band.map((b) => b.navn).join(", ")} — bilde ${i + 1}`}
+                            className={stiler.bilde}
+                            loading="lazy"
+                          />
+                        </button>
                       ))
                     )}
                   </div>
@@ -152,6 +160,22 @@ const Konserter = () => {
           })}
         </ul>
       </div>
+
+      {åpentBilde && (
+        <Lightbox
+          bilder={åpentBilde.bilder}
+          startIndeks={åpentBilde.indeks}
+          onLukk={() => setÅpentBilde(null)}
+          onForrige={() =>
+            setÅpentBilde((b) => b && b.indeks > 0 ? { ...b, indeks: b.indeks - 1 } : b)
+          }
+          onNeste={() =>
+            setÅpentBilde((b) =>
+              b && b.indeks < b.bilder.length - 1 ? { ...b, indeks: b.indeks + 1 } : b
+            )
+          }
+        />
+      )}
     </Side>
   );
 };

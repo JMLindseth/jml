@@ -143,9 +143,24 @@
 /* Bildegalleri */
 .galleri {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 4px;
   padding: 0 4px 4px;
+}
+
+.bildKnapp {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: zoom-in;
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bildKnapp:hover .bilde {
+  opacity: 0.85;
+  transform: scale(1.02);
 }
 
 .bilde {
@@ -154,6 +169,7 @@
   object-fit: cover;
   border-radius: 4px;
   display: block;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
 .ingenBilder {
