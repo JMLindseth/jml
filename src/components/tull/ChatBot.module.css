@@ -1,0 +1,193 @@
+@keyframes dukkeOpp {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes puls {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.1); }
+}
+
+.container {
+  position: fixed;
+  bottom: 5.5rem; /* above cookie banner */
+  right: 1.5rem;
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.boble {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #4f8ef7;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(79, 142, 247, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.boble:hover {
+  background: #3a7de0;
+  transform: scale(1.05);
+}
+
+.merke {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: puls 1.2s ease infinite;
+}
+
+.chatVindu {
+  width: 300px;
+  background: #16161c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+  animation: dukkeOpp 0.25s ease;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(79, 142, 247, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.botInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.avatar {
+  font-size: 1.4rem;
+}
+
+.botInfo strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #e8e8ea;
+}
+
+.status {
+  font-size: 0.65rem;
+  color: #4caf82;
+}
+
+.lukkKnapp {
+  background: transparent;
+  border: none;
+  color: rgba(200, 200, 210, 0.4);
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 2px 4px;
+  transition: color 0.15s;
+}
+
+.lukkKnapp:hover {
+  color: rgba(200, 200, 210, 0.8);
+}
+
+.meldingsliste {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 240px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.melding {
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  max-width: 85%;
+  word-break: break-word;
+}
+
+.fraBot {
+  background: rgba(255, 255, 255, 0.07);
+  color: #e8e8ea;
+  align-self: flex-start;
+  border-bottom-left-radius: 3px;
+}
+
+.fraBruker {
+  background: #4f8ef7;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 3px;
+}
+
+.inputRad {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.felt {
+  flex: 1;
+  padding: 0.45rem 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #e8e8ea;
+  font-size: 0.82rem;
+  outline: none;
+}
+
+.felt:focus {
+  border-color: rgba(79, 142, 247, 0.5);
+}
+
+.sendKnapp {
+  padding: 0.45rem 0.7rem;
+  background: #4f8ef7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sendKnapp:hover {
+  background: #3a7de0;
+}

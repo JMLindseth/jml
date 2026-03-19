@@ -1,0 +1,21 @@
+.innhold {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.tittel {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e8e8ea;
+}
+
+.ingress {
+  font-size: 1.1rem;
+  color: rgba(200, 200, 210, 0.6);
+  max-width: 480px;
+}

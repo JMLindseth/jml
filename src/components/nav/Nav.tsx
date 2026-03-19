@@ -17,6 +17,12 @@ const Nav = () => {
       >
         Konserter
       </NavLink>
+      <NavLink
+        to="/tull"
+        className={({ isActive }) => `${stiler.lenke} ${isActive ? stiler.aktiv : ""}`}
+      >
+        Tull
+      </NavLink>
     </nav>
   );
 };

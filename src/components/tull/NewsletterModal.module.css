@@ -1,0 +1,156 @@
+@keyframes risting {
+  0%   { transform: translateX(0); }
+  15%  { transform: translateX(-8px) rotate(-1deg); }
+  30%  { transform: translateX(8px) rotate(1deg); }
+  45%  { transform: translateX(-6px) rotate(-0.5deg); }
+  60%  { transform: translateX(6px) rotate(0.5deg); }
+  75%  { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes dukkeOpp {
+  from {
+    opacity: 0;
+    transform: scale(0.88) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.overlegg {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
+
+.modal {
+  position: relative;
+  background: #16161c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2.5rem 2rem 2rem;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  animation: dukkeOpp 0.3s ease;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+.rister {
+  animation: risting 0.55s ease;
+}
+
+.lukkKnapp {
+  position: absolute;
+  top: 6px;
+  right: -18px;
+  background: transparent;
+  border: none;
+  color: rgba(200, 200, 210, 0.2);
+  font-size: 0.7rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.15s;
+}
+
+.lukkKnapp:hover {
+  color: rgba(200, 200, 210, 0.4);
+}
+
+.ikon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tittel {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e8e8ea;
+  margin: 0 0 0.6rem;
+}
+
+.beskrivelse {
+  font-size: 0.85rem;
+  color: rgba(200, 200, 210, 0.55);
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.skjema {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.felt {
+  padding: 0.6rem 0.9rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #e8e8ea;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.felt:focus {
+  border-color: rgba(79, 142, 247, 0.5);
+}
+
+.abonnerKnapp {
+  padding: 0.65rem 1rem;
+  background: #4f8ef7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.abonnerKnapp:hover {
+  background: #3a7de0;
+}
+
+.avslåKnapp {
+  background: transparent;
+  border: none;
+  color: rgba(200, 200, 210, 0.3);
+  font-size: 0.7rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.15s;
+  padding: 0;
+}
+
+.avslåKnapp:hover {
+  color: rgba(200, 200, 210, 0.5);
+}
+
+.suksess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.suksess span {
+  font-size: 2.5rem;
+}
+
+.suksess p {
+  color: rgba(200, 200, 210, 0.7);
+  font-size: 0.95rem;
+  margin: 0;
+}
