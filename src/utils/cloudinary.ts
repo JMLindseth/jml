@@ -1,4 +1,4 @@
-const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME as string;
+const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME ?? "dnc9yha7k";
 
 // Bygger en Cloudinary-URL med automatisk kvalitet og format
 export const bildUrl = (publicId: string, bredde?: number): string => {
